@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "LuoFlow – Hailuo Video Automation",
+  "version": "1.0.0",
+  "description": "A workflow automation extension built to automate AI video generation pipelines on Hailuo AI from Excel storyboards.",
+  "permissions": ["tabs", "scripting", "cookies", "storage", "alarms", "windows"],
+  "host_permissions": ["https://hailuoai.video/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://hailuoai.video/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://hailuoai.video/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "128": "icon128.png"
+    },
+    "default_title": "Hailuo Video Automation",
+    "default_popup": "popup/index.html"
+  }
+}
