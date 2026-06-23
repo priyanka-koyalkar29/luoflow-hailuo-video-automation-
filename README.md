@@ -6,7 +6,7 @@ A workflow automation Chrome extension built during my internship to automate AI
 
 ## Background
 
-This project originated during my internship at **&lt;Company Name&gt;**, where I worked on automating Hailuo AI video generation workflows. 
+This project originated during my internship at OAKS , where I worked on automating Hailuo AI video generation workflows. 
 
 The repository here represents my maintained and enhanced version, including a complete glassmorphic dark-theme UI overhaul, interactive execution log monitoring, live queue metrics, error recovery features, and advanced sheet template generation.
 
