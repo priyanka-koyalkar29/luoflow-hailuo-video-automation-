@@ -46,27 +46,7 @@ Injected Main World Script (inject.ts)
 Hailuo AI Web Application
 ```
 
-### Script Coordination Workflow
 
-```mermaid
-sequenceDiagram
-    participant Popup as React Popup UI
-    participant BG as Background Service Worker
-    participant Inject as Injected Page Script (MAIN World)
-    participant Hailuo as Hailuo AI Server API
-
-    Popup->>BG: Connect Port ('generation')
-    Popup->>BG: Send 'GENERATE' shot details
-    BG->>BG: Find/Create Hailuo Tab
-    BG->>BG: Select Model & Fill Prompt Text
-    BG->>BG: Convert & Upload Base64 Image Reference
-    BG->>BG: Click "Generate" button
-    BG->>Popup: SHOT_PROGRESS ("Waiting for video generation...")
-    Note over BG,Inject: Automation awaits API completion
-    Hailuo-->>Inject: fetch() returns finished batchFeeds (video URL)
-    Inject-->>BG: window.postMessage(url, method, data)
-    BG->>Popup: Send 'SHOT_DONE' with videoUrl
-```
 
 ---
 
